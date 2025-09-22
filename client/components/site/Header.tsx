@@ -41,27 +41,31 @@ export function Header() {
           <div className="relative flex items-center">
             <div
               aria-hidden
+              className="w-12 h-8 sm:w-14 sm:h-10 md:w-[168px] md:h-[120px] rounded-md md:rounded-lg bg-[hsl(var(--brand-500))]"
               style={{
-                background: "hsl(var(--brand-500))",
-                WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800)`,
-                maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800)`,
+                WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
+                maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
                 WebkitMaskSize: "contain",
                 maskSize: "contain",
                 WebkitMaskRepeat: "no-repeat",
                 maskRepeat: "no-repeat",
                 WebkitMaskPosition: "center",
                 maskPosition: "center",
-                width: 168,
-                height: 120,
-                borderRadius: 12,
                 boxShadow: "0 12px 48px rgba(34, 139, 230, 0.22)",
+                backgroundColor: "transparent",
               }}
-              className="rounded-md md:rounded-lg"
             />
+            {/* Visible img fallback for browsers that don't support masks + responsive srcset for retina */}
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800"
+              srcSet={
+                "https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600 1600w"
+              }
+              sizes="(max-width: 640px) 48px, (max-width: 1024px) 56px, 168px"
               alt="5K30 logo"
-              className="sr-only"
+              className="absolute inset-0 m-auto block w-[60%] h-[60%] md:hidden opacity-0"
+              loading="lazy"
+              aria-hidden
             />
           </div>
         </Link>
