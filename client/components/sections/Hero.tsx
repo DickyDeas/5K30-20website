@@ -93,10 +93,10 @@ function LaptopIllustration() {
             {/* User-provided screen image inserted and clipped to the laptop screen */}
             <image
               href="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=1600"
-              x="120"
-              y="60"
-              width="560"
-              height="320"
+              x="116"
+              y="56"
+              width="568"
+              height="328"
               preserveAspectRatio="xMidYMid slice"
               clipPath="url(#screenClip)"
               opacity="1"
@@ -111,7 +111,6 @@ function LaptopIllustration() {
             </g>
 
             <g>
-              <circle cx="150" cy="120" r="60" fill="url(#grad)" opacity="0.18" />
               <rect x="150" y="280" width="550" height="8" rx="4" fill="#ffffff" opacity="0.06" />
               <rect x="150" y="300" width="520" height="8" rx="4" fill="#ffffff" opacity="0.05" />
               <rect x="150" y="320" width="560" height="8" rx="4" fill="#ffffff" opacity="0.05" />
