@@ -52,10 +52,9 @@ export function Header() {
                 WebkitMaskPosition: "center",
                 maskPosition: "center",
                 boxShadow: "0 12px 48px rgba(34, 139, 230, 0.22)",
-                backgroundColor: "transparent",
               }}
             />
-            {/* Visible img fallback for browsers that don't support masks + responsive srcset for retina */}
+            {/* Fallback image for accessibility (screen readers) */}
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800"
               srcSet={
@@ -63,9 +62,8 @@ export function Header() {
               }
               sizes="(max-width: 640px) 48px, (max-width: 1024px) 56px, 168px"
               alt="5K30 logo"
-              className="absolute inset-0 m-auto block w-[60%] h-[60%] md:hidden opacity-0"
+              className="sr-only"
               loading="lazy"
-              aria-hidden
             />
           </div>
         </Link>
