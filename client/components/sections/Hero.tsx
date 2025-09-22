@@ -6,16 +6,28 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       {/* Large faint background logo filling the hero */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600"
-          alt="5K30 background"
-          className="pointer-events-none object-contain"
+        {/* Use mask to colorize the logo with the brand blue */}
+        <div
+          className="pointer-events-none"
           style={{
-            width: "85%",
+            width: '90%',
             maxWidth: 1400,
+            height: '90%',
             opacity: 0.18,
-            filter: "brightness(2) saturate(0.9) blur(0px)",
-            mixBlendMode: "screen",
+            background: 'hsl(var(--brand-500))',
+            WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
+            maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
+            WebkitMaskSize: 'contain',
+            maskSize: 'contain',
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
+            WebkitMaskPosition: 'center',
+            maskPosition: 'center',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            mixBlendMode: 'normal',
+            filter: 'none',
           }}
         />
       </div>
