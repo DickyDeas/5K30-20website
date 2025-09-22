@@ -38,6 +38,13 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          400: "hsl(var(--accent-400))",
+          500: "hsl(var(--accent-500))",
+        },
+        brand: {
+          400: "hsl(var(--brand-400))",
+          500: "hsl(var(--brand-500))",
+          600: "hsl(var(--brand-600))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -57,6 +64,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        sans: ["Inter", "Sora", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
