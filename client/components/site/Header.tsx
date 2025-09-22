@@ -36,36 +36,34 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
-        {/* Logo: using uploaded asset and coloring it with brand color via mask */}
+        {/* Logo: use the SVG asset as the visible brand mark, colored via mask, and remove the "30" text to match request */}
         <Link to="/" className="group inline-flex items-center gap-3">
-          {/** Colorized mask fallback + accessible image **/}
           <div className="relative flex items-center">
             <div
               aria-hidden
               style={{
                 background: "hsl(var(--brand-500))",
-                WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Ff412d655b9ec442c9aa85130e176f476?format=webp&width=800)`,
-                maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Ff412d655b9ec442c9aa85130e176f476?format=webp&width=800)`,
+                WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800)`,
+                maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800)`,
                 WebkitMaskSize: "contain",
                 maskSize: "contain",
                 WebkitMaskRepeat: "no-repeat",
                 maskRepeat: "no-repeat",
                 WebkitMaskPosition: "center",
                 maskPosition: "center",
-                width: 44,
-                height: 36,
+                width: 56,
+                height: 40,
                 borderRadius: 8,
-                boxShadow: "0 6px 24px rgba(34, 139, 230, 0.18)",
+                boxShadow: "0 8px 28px rgba(34, 139, 230, 0.18)",
               }}
+              className="rounded-md"
             />
-            {/* Visually hidden original for screen readers */}
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Ff412d655b9ec442c9aa85130e176f476?format=webp&width=800"
-              alt="5K30"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800"
+              alt="5K30 logo"
               className="sr-only"
             />
           </div>
-          <span className="text-lg font-extrabold tracking-tight text-foreground">30</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
