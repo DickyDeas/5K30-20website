@@ -30,6 +30,7 @@ export default function About() {
               <li>• Real-world integrations and analytics</li>
               <li>• Clean, maintainable codebase</li>
               <li>• A launch-ready MVP</li>
+              <li>• Support and advice along the way from experienced business builders</li>
             </ul>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
