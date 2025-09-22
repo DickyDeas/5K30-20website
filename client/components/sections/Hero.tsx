@@ -85,18 +85,23 @@ function LaptopIllustration() {
                 <stop offset="100%" stopColor="hsl(var(--accent-500))" />
               </linearGradient>
               <clipPath id="screenClip">
-                <rect x="120" y="60" width="560" height="320" rx="12" ry="12" />
+                <rect x="116" y="56" width="568" height="328" rx="12" ry="12" />
               </clipPath>
+              <linearGradient id="glare" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="rgba(255,255,255,0.12)" />
+                <stop offset="30%" stopColor="rgba(255,255,255,0.04)" />
+                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+              </linearGradient>
             </defs>
             <rect width="800" height="450" fill="url(#grad)" opacity="0.06" />
 
             {/* User-provided screen image inserted and clipped to the laptop screen */}
             <image
               href="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=2000"
-              x="120"
-              y="60"
-              width="560"
-              height="320"
+              x="116"
+              y="56"
+              width="568"
+              height="328"
               preserveAspectRatio="xMidYMid slice"
               clipPath="url(#screenClip)"
               opacity="1"
@@ -108,6 +113,15 @@ function LaptopIllustration() {
               <rect x="240" y="160" width="320" height="28" rx="6" fill="#ffffff" opacity="0.04" />
               <rect x="240" y="200" width="360" height="28" rx="6" fill="#ffffff" opacity="0.04" />
               <rect x="240" y="240" width="300" height="28" rx="6" fill="#ffffff" opacity="0.04" />
+
+              {/* dim the screen slightly for realism */}
+              <rect x="116" y="56" width="568" height="328" rx="12" fill="#000" opacity="0.04" />
+
+              {/* glare overlay */}
+              <rect x="116" y="56" width="568" height="80" rx="12" fill="url(#glare)" opacity="0.9" />
+
+              {/* inner bezel stroke */}
+              <rect x="118" y="58" width="564" height="324" rx="10" fill="none" stroke="#000" strokeOpacity="0.06" />
             </g>
 
             <g>
