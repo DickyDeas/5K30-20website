@@ -4,6 +4,34 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* Large faint background logo filling the hero */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center"
+        style={{
+          opacity: 0.05,
+        }}
+      >
+        <div
+          style={{
+            width: "100vw",
+            height: "100vh",
+            background: "hsl(var(--brand-500))",
+            WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
+            maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+        />
+      </div>
+
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-1/3 top-[-10%] h-[40rem] w-[40rem] rounded-full bg-brand-500/20 blur-3xl" />
         <div className="absolute -right-1/3 bottom-[-10%] h-[40rem] w-[40rem] rounded-full bg-accent-500/20 blur-3xl" />
