@@ -1,0 +1,119 @@
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/process", label: "Process" },
+  { to: "/portfolio", label: "Portfolio" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
+
+export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    // Close any open mobile menus when navigating
+    document.activeElement instanceof HTMLElement && document.activeElement.blur();
+  }, [pathname]);
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/70",
+        scrolled ? "border-b border-white/10" : "border-b border-transparent",
+      )}
+    >
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+        <Link to="/" className="group inline-flex items-center gap-2">
+          <div className="relative grid size-9 place-items-center rounded-md bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-[0_0_30px_theme(colors.brand.500/40%)]">
+            <span className="select-none text-xs font-extrabold tracking-wider">5K</span>
+          </div>
+          <span className="text-lg font-extrabold tracking-tight text-foreground">30</span>
+        </Link>
+        <nav className="hidden items-center gap-6 md:flex">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                cn(
+                  "text-sm font-semibold text-foreground/80 transition hover:text-foreground",
+                  isActive && "text-foreground",
+                )
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="hidden md:block">
+          <Button asChild size="lg" className="bg-brand-500 hover:bg-brand-500/90 shadow-[0_10px_30px_-10px_theme(colors.brand.500/70%)]">
+            <Link to="/contact">Book Free Call</Link>
+          </Button>
+        </div>
+
+        {/* Mobile */}
+        <MobileMenu />
+      </div>
+    </header>
+  );
+}
+
+function MobileMenu() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="md:hidden">
+      <button
+        aria-label="Toggle menu"
+        onClick={() => setOpen((v) => !v)}
+        className="grid size-10 place-items-center rounded-md border border-white/10 bg-white/5 text-foreground/90"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute inset-x-0 top-16 z-40 border-b border-white/10 bg-background/95 px-4 pb-6 pt-4 shadow-lg backdrop-blur sm:px-6">
+          <div className="grid gap-3">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  cn(
+                    "rounded-md px-2 py-2 text-base font-semibold text-foreground/80 transition hover:bg-white/5 hover:text-foreground",
+                    isActive && "text-foreground",
+                  )
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <Button asChild className="bg-brand-500 hover:bg-brand-500/90">
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Book Free Call
+              </Link>
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Header;
