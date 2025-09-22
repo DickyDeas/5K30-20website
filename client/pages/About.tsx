@@ -9,6 +9,9 @@ export default function About() {
           <p className="mt-3 text-foreground/80">
             We help founders validate faster. Tight sprints, strong product taste, and pragmatic engineering.
           </p>
+          <p className="mt-2 text-foreground/80">
+            You’ve had the idea — now let us help you get it to market, fast!
+          </p>
         </div>
         <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-2 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
