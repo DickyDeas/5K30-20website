@@ -92,11 +92,11 @@ function LaptopIllustration() {
 
             {/* User-provided screen image inserted and clipped to the laptop screen */}
             <image
-              href="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=1600"
-              x="116"
-              y="56"
-              width="568"
-              height="328"
+              href="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=2000"
+              x="120"
+              y="60"
+              width="560"
+              height="320"
               preserveAspectRatio="xMidYMid slice"
               clipPath="url(#screenClip)"
               opacity="1"
