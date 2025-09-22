@@ -36,9 +36,34 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
-        <Link to="/" className="group inline-flex items-center gap-2">
-          <div className="relative grid size-9 place-items-center rounded-md bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-[0_0_30px_theme(colors.brand.500/40%)]">
-            <span className="select-none text-xs font-extrabold tracking-wider">5K</span>
+        {/* Logo: using uploaded asset and coloring it with brand color via mask */}
+        <Link to="/" className="group inline-flex items-center gap-3">
+          {/** Colorized mask fallback + accessible image **/}
+          <div className="relative flex items-center">
+            <div
+              aria-hidden
+              style={{
+                background: "hsl(var(--brand-500))",
+                WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Ff412d655b9ec442c9aa85130e176f476?format=webp&width=800)`,
+                maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Ff412d655b9ec442c9aa85130e176f476?format=webp&width=800)`,
+                WebkitMaskSize: "contain",
+                maskSize: "contain",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskPosition: "center",
+                maskPosition: "center",
+                width: 44,
+                height: 36,
+                borderRadius: 8,
+                boxShadow: "0 6px 24px rgba(34, 139, 230, 0.18)",
+              }}
+            />
+            {/* Visually hidden original for screen readers */}
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Ff412d655b9ec442c9aa85130e176f476?format=webp&width=800"
+              alt="5K30"
+              className="sr-only"
+            />
           </div>
           <span className="text-lg font-extrabold tracking-tight text-foreground">30</span>
         </Link>
