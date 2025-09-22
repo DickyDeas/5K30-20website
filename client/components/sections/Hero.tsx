@@ -84,17 +84,37 @@ function LaptopIllustration() {
                 <stop offset="0%" stopColor="hsl(var(--brand-500))" />
                 <stop offset="100%" stopColor="hsl(var(--accent-500))" />
               </linearGradient>
+              <clipPath id="screenClip">
+                <rect x="120" y="60" width="560" height="320" rx="12" ry="12" />
+              </clipPath>
             </defs>
-            <rect width="800" height="450" fill="url(#grad)" opacity="0.08" />
+            <rect width="800" height="450" fill="url(#grad)" opacity="0.06" />
+
+            {/* User-provided screen image inserted and clipped to the laptop screen */}
+            <image
+              href="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=1600"
+              x="120"
+              y="60"
+              width="560"
+              height="320"
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#screenClip)"
+              opacity="1"
+            />
+
+            {/* subtle overlay and UI lines to match design */}
+            <g clipPath="url(#screenClip)">
+              <rect x="240" y="100" width="420" height="40" rx="8" fill="#ffffff" opacity="0.06" />
+              <rect x="240" y="160" width="320" height="28" rx="6" fill="#ffffff" opacity="0.04" />
+              <rect x="240" y="200" width="360" height="28" rx="6" fill="#ffffff" opacity="0.04" />
+              <rect x="240" y="240" width="300" height="28" rx="6" fill="#ffffff" opacity="0.04" />
+            </g>
+
             <g>
-              <circle cx="150" cy="120" r="60" fill="url(#grad)" opacity="0.35" />
-              <rect x="240" y="100" width="420" height="40" rx="8" fill="#ffffff" opacity="0.15" />
-              <rect x="240" y="160" width="320" height="28" rx="6" fill="#ffffff" opacity="0.12" />
-              <rect x="240" y="200" width="360" height="28" rx="6" fill="#ffffff" opacity="0.12" />
-              <rect x="240" y="240" width="300" height="28" rx="6" fill="#ffffff" opacity="0.12" />
-              <rect x="150" y="280" width="550" height="8" rx="4" fill="#ffffff" opacity="0.15" />
-              <rect x="150" y="300" width="520" height="8" rx="4" fill="#ffffff" opacity="0.12" />
-              <rect x="150" y="320" width="560" height="8" rx="4" fill="#ffffff" opacity="0.12" />
+              <circle cx="150" cy="120" r="60" fill="url(#grad)" opacity="0.18" />
+              <rect x="150" y="280" width="550" height="8" rx="4" fill="#ffffff" opacity="0.06" />
+              <rect x="150" y="300" width="520" height="8" rx="4" fill="#ffffff" opacity="0.05" />
+              <rect x="150" y="320" width="560" height="8" rx="4" fill="#ffffff" opacity="0.05" />
             </g>
           </svg>
         </div>
