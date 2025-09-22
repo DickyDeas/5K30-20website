@@ -7,15 +7,11 @@ export default function Hero() {
       {/* Large faint background logo filling the hero */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center"
-        style={{
-          opacity: 0.05,
-        }}
+        className="pointer-events-none absolute inset-0 -z-20 flex items-center justify-center opacity-10 md:opacity-20 md:scale-105"
       >
         <div
+          className="w-[120vw] h-[120vh] md:w-[90vw] md:h-[90vh]"
           style={{
-            width: "100vw",
-            height: "100vh",
             background: "hsl(var(--brand-500))",
             WebkitMaskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
             maskImage: `url(https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=1600)`,
@@ -28,6 +24,7 @@ export default function Hero() {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
+            filter: "blur(0.5px)",
           }}
         />
       </div>
