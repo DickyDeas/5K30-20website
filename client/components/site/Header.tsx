@@ -51,12 +51,12 @@ export function Header() {
                 maskRepeat: "no-repeat",
                 WebkitMaskPosition: "center",
                 maskPosition: "center",
-                width: 56,
-                height: 40,
-                borderRadius: 8,
-                boxShadow: "0 8px 28px rgba(34, 139, 230, 0.18)",
+                width: 168,
+                height: 120,
+                borderRadius: 12,
+                boxShadow: "0 12px 48px rgba(34, 139, 230, 0.22)",
               }}
-              className="rounded-md"
+              className="rounded-md md:rounded-lg"
             />
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2F302b7f2663814c4f98428198fb338857?format=webp&width=800"
