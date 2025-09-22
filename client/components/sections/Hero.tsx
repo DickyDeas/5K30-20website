@@ -77,58 +77,48 @@ function LaptopIllustration() {
     <div className="relative mx-auto w-full max-w-[640px]">
       <div className="absolute inset-0 -z-10 animate-pulse rounded-3xl bg-gradient-to-br from-brand-500/20 to-accent-500/20 blur-2xl" />
       <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-4 shadow-2xl">
-        <div className="overflow-hidden rounded-lg border border-white/10 bg-background/60">
-          <svg viewBox="0 0 800 450" className="h-[340px] w-full">
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-background/60 relative">
+          {/* Use an img for reliable rendering across browsers and make it fill the screen area */}
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=2000"
+            alt="Screen preview"
+            className="block w-full h-[340px] object-cover"
+            style={{
+              objectPosition: 'center center',
+            }}
+            loading="lazy"
+          />
+
+          {/* SVG overlay for UI chrome, glare and subtle lines */}
+          <svg viewBox="0 0 800 450" className="absolute inset-0 h-full w-full pointer-events-none">
             <defs>
               <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
                 <stop offset="0%" stopColor="hsl(var(--brand-500))" />
                 <stop offset="100%" stopColor="hsl(var(--accent-500))" />
               </linearGradient>
-              <clipPath id="screenClip">
-                <rect x="116" y="56" width="568" height="328" rx="12" ry="12" />
-              </clipPath>
               <linearGradient id="glare" x1="0" x2="0" y1="0" y2="1">
                 <stop offset="0%" stopColor="rgba(255,255,255,0.12)" />
                 <stop offset="30%" stopColor="rgba(255,255,255,0.04)" />
                 <stop offset="100%" stopColor="rgba(255,255,255,0)" />
               </linearGradient>
             </defs>
-            <rect width="800" height="450" fill="url(#grad)" opacity="0.06" />
 
-            {/* User-provided screen image inserted and clipped to the laptop screen */}
-            <image
-              href="https://cdn.builder.io/api/v1/image/assets%2Fe3ae173b79f74e84b0580a7f82f9aa6c%2Fd3b1aa13752348fcb51fdf81b75847c5?format=webp&width=2000"
-              x="116"
-              y="56"
-              width="568"
-              height="328"
-              preserveAspectRatio="xMidYMid slice"
-              clipPath="url(#screenClip)"
-              opacity="1"
-            />
+            <rect width="800" height="450" fill="url(#grad)" opacity="0.02" />
 
-            {/* subtle overlay and UI lines to match design */}
-            <g clipPath="url(#screenClip)">
-              <rect x="240" y="100" width="420" height="40" rx="8" fill="#ffffff" opacity="0.06" />
-              <rect x="240" y="160" width="320" height="28" rx="6" fill="#ffffff" opacity="0.04" />
-              <rect x="240" y="200" width="360" height="28" rx="6" fill="#ffffff" opacity="0.04" />
-              <rect x="240" y="240" width="300" height="28" rx="6" fill="#ffffff" opacity="0.04" />
-
-              {/* dim the screen slightly for realism */}
-              <rect x="116" y="56" width="568" height="328" rx="12" fill="#000" opacity="0.04" />
-
-              {/* glare overlay */}
-              <rect x="116" y="56" width="568" height="80" rx="12" fill="url(#glare)" opacity="0.9" />
-
-              {/* inner bezel stroke */}
-              <rect x="118" y="58" width="564" height="324" rx="10" fill="none" stroke="#000" strokeOpacity="0.06" />
-            </g>
-
+            {/* subtle UI lines */}
             <g>
-              <rect x="150" y="280" width="550" height="8" rx="4" fill="#ffffff" opacity="0.06" />
-              <rect x="150" y="300" width="520" height="8" rx="4" fill="#ffffff" opacity="0.05" />
-              <rect x="150" y="320" width="560" height="8" rx="4" fill="#ffffff" opacity="0.05" />
+              <rect x="244" y="104" width="420" height="36" rx="6" fill="#ffffff" opacity="0.06" />
+              <rect x="244" y="164" width="320" height="28" rx="6" fill="#ffffff" opacity="0.04" />
+              <rect x="244" y="204" width="360" height="28" rx="6" fill="#ffffff" opacity="0.04" />
+              <rect x="244" y="244" width="300" height="28" rx="6" fill="#ffffff" opacity="0.04" />
             </g>
+
+            {/* dimming and glare for realism */}
+            <rect x="0" y="0" width="800" height="450" fill="#000" opacity="0.02" />
+            <rect x="0" y="0" width="800" height="80" fill="url(#glare)" opacity="0.9" />
+
+            {/* inner bezel stroke */}
+            <rect x="2" y="2" width="796" height="446" rx="10" fill="none" stroke="#000" strokeOpacity="0.04" />
           </svg>
         </div>
         <div className="mx-auto -mt-2 h-3 w-1/2 rounded-b-xl bg-white/20" />
