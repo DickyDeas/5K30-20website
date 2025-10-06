@@ -1,15 +1,15 @@
 const testimonials = [
   {
-    name: "Amelia Hart",
-    role: "Founder, Finflow",
+    name: "Kate",
+    role: "UPHire IQ",
     quote:
-      "They shipped a usable MVP in under a month. Clear milestones, zero fluff. We closed our first 5 customers within 2 weeks of launch.",
+      "They shipped a usable MVP in under a month. Clear milestones, zero fluff. We closed our first 5 meetings within 2 weeks of launch.",
   },
   {
-    name: "James Lee",
-    role: "CEO, ParcelPilot",
+    name: "Lauren",
+    role: "Olympia Club app",
     quote:
-      "Best MVP experience we've had. Strong product taste and pragmatic engineering. Exactly what an early-stage team needs.",
+      "Best MVP experience, we had a great idea but no clue how to get it built. 5k30 did it all for us!",
   },
   {
     name: "Priya Nair",
