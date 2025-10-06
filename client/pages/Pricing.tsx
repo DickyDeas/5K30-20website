@@ -95,6 +95,7 @@ export default function Pricing() {
               <p>We pick the fastest path for your goals — Webflow/Bubble or React + Supabase + Stripe.</p>
             </div>
           </div>
+          <p className="mt-6 text-xs text-foreground/60">Disclaimer: We reserve the right to refuse any project and to decline or cancel engagements that do not align with our expertise or values. Pricing and availability are subject to change.</p>
         </div>
       </section>
     </MainLayout>
