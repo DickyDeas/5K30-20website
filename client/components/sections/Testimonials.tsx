@@ -11,10 +11,6 @@ const testimonials = [
     quote:
       "Best MVP experience, we had a great idea but no clue how to get it built. 5k30 did it all for us!",
   },
-  {
-    name: "Priya Nair",
-    role: "Co-founder, Huddle",
-  },
 ];
 
 export default function Testimonials() {
