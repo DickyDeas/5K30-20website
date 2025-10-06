@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/process", label: "Process" },
-  { to: "/portfolio", label: "Portfolio" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
