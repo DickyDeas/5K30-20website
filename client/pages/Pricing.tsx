@@ -23,6 +23,7 @@ export default function Pricing() {
               <li>• Production deployment and handover docs</li>
               <li>• 2 weeks post-launch support</li>
             </ul>
+            <p className="mt-6 text-sm text-foreground/80">Payment is made in 2 instalments — 40% on initial sign-off and 60% on completion.</p>
             <div className="mt-6">
               <Button asChild size="lg" className="bg-brand-500 hover:bg-brand-500/90">
                 <Link to="/contact">Book Free Call</Link>
