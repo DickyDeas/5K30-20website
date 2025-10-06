@@ -15,6 +15,23 @@ export default function Pricing() {
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
           <div className="grid gap-6">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+              <h2 className="text-2xl font-bold text-white">The 5K30 Package</h2>
+              <ul className="mt-4 grid gap-3 text-sm text-foreground/80">
+                <li>• 4-week build sprint with weekly demos</li>
+                <li>• Product strategy, UI, and implementation</li>
+                <li>• Auth, payments, and analytics setup</li>
+                <li>• Production deployment and handover docs</li>
+                <li>• 2 weeks post-launch support</li>
+              </ul>
+              <p className="mt-6 text-sm text-foreground/80">Payment is made in 2 instalments — 40% on initial sign-off and 60% on completion.</p>
+              <div className="mt-6">
+                <Button asChild size="lg" className="bg-brand-500 hover:bg-brand-500/90">
+                  <Link to="/contact">Book Free Call</Link>
+                </Button>
+              </div>
+            </div>
+
             <div className="rounded-2xl border border-brand-500 bg-gradient-to-br from-brand-600/10 to-brand-500/5 p-8">
               <h2 className="text-2xl font-bold text-white">The 8K30 Package — £8,000</h2>
               <p className="mt-2 text-sm text-foreground/80">A 1-stop shop from idea to launch.</p>
@@ -32,23 +49,6 @@ export default function Pricing() {
               <p className="mt-6 text-sm text-foreground/80">Payment is made in 2 instalments — 40% on initial sign-off and 60% on completion.</p>
               <div className="mt-6">
                 <Button asChild size="lg" className="bg-brand-600 hover:bg-brand-600/90">
-                  <Link to="/contact">Book Free Call</Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h2 className="text-2xl font-bold text-white">The 5K30 Package</h2>
-              <ul className="mt-4 grid gap-3 text-sm text-foreground/80">
-                <li>• 4-week build sprint with weekly demos</li>
-                <li>• Product strategy, UI, and implementation</li>
-                <li>• Auth, payments, and analytics setup</li>
-                <li>• Production deployment and handover docs</li>
-                <li>• 2 weeks post-launch support</li>
-              </ul>
-              <p className="mt-6 text-sm text-foreground/80">Payment is made in 2 instalments — 40% on initial sign-off and 60% on completion.</p>
-              <div className="mt-6">
-                <Button asChild size="lg" className="bg-brand-500 hover:bg-brand-500/90">
                   <Link to="/contact">Book Free Call</Link>
                 </Button>
               </div>
