@@ -36,7 +36,7 @@ export default function Pricing() {
               <AccordionItem value="design">
                 <AccordionTrigger>Branding & Marketing Site</AccordionTrigger>
                 <AccordionContent>
-                  Dedicated marketing site or landing pages with CMS.
+                  Full website builds — marketing sites or multi-page websites with integrations for shops, payments, CMS, and analytics.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="mobile">
