@@ -14,8 +14,6 @@ const testimonials = [
   {
     name: "Priya Nair",
     role: "Co-founder, Huddle",
-    quote:
-      "A+ communication. They handled payments, auth, and analytics without overengineering. We raised our pre-seed off this product.",
   },
 ];
 
@@ -32,7 +30,9 @@ export default function Testimonials() {
               key={i}
               className="snap-center shrink-0 basis-[90%] rounded-2xl border border-white/10 bg-white/5 p-6 sm:basis-[48%] lg:basis-[32%]"
             >
-              <blockquote className="text-pretty text-lg leading-relaxed text-white/90">“{t.quote}”</blockquote>
+              {t.quote ? (
+                <blockquote className="text-pretty text-lg leading-relaxed text-white/90">“{t.quote}”</blockquote>
+              ) : null}
               <figcaption className="mt-4 text-sm text-foreground/70">
                 <span className="font-semibold text-white">{t.name}</span> — {t.role}
               </figcaption>
