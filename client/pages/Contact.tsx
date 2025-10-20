@@ -8,18 +8,22 @@ export default function Contact() {
     <MainLayout>
       <section className="mx-auto max-w-7xl px-4 pb-12 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-balance text-4xl font-extrabold text-white sm:text-5xl">Let’s Launch Your MVP</h1>
-          <p className="mt-3 text-foreground/80">Tell us about your idea and we’ll share a plan for a 30-day build.</p>
+          <h1 className="text-balance text-4xl font-extrabold text-white sm:text-5xl">Let's Launch Your MVP</h1>
+          <p className="mt-3 text-foreground/80">Tell us about your idea and we'll share a plan for a 30-day build.</p>
         </div>
       </section>
       <section className="mx-auto max-w-4xl px-4 pb-20 sm:px-6 lg:px-8">
         <form
+          name="contact"
+          method="POST"
+          netlify
+          netlify-honeypot="bot-field"
           className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-6"
           onSubmit={(e) => {
-            e.preventDefault();
-            alert("Thanks! We’ll get back to you shortly.");
+            alert("Thanks! We'll get back to you shortly.");
           }}
         >
+          <input type="hidden" name="bot-field" />
           <div className="grid gap-2">
             <label className="text-sm font-semibold text-white">Name</label>
             <Input name="name" placeholder="Your name" required />
