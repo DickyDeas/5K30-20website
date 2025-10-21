@@ -3,6 +3,7 @@ import MainLayout from "@/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,24 +15,25 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // Add Web3Forms access key
+    formData.append("access_key", "54fad0d6-ad22-492e-9f7c-60996537bb4d");
+
     try {
-      const response = await fetch("/.netlify/functions/submit-form", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          idea: formData.get("idea"),
-        }),
+        body: formData,
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         form.reset();
-        alert("Thanks! We'll get back to you shortly.");
+        toast.success("Thanks! We'll get back to you shortly.");
       } else {
-        alert("Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
