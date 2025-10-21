@@ -1,3 +1,13 @@
+const webhookUrl = "https://hooks.zapier.com/hooks/catch/24626192/uri5pn9/";
+const response = await fetch(webhookUrl, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name: formData.get("name"),
+    email: formData.get("email"),
+    idea: formData.get("idea"),
+  }),
+});});
 import { useState } from "react";
 import MainLayout from "@/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
