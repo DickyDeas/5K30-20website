@@ -19,16 +19,7 @@ const handler: Handler = async (event) => {
       };
     }
 
-    // Log the submission (Netlify will capture this)
-    console.log("Contact form submiss
-
-    // Send data to Zapier webhook
-    const webhookUrl = "https://hooks.zapier.com/hooks/catch/24626192/uri5pn9/";
-    await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, idea }),
-    })io
+    console.log("Contact form submission received", { name, email });
 
     return {
       statusCode: 200,
