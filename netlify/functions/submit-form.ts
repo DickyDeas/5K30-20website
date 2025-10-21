@@ -28,8 +28,7 @@ const handler: Handler = async (event) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, idea }),
-    });
-ion: ", { name, email, idea });
+    })io
 
     return {
       statusCode: 200,
