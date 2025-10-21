@@ -23,7 +23,10 @@ const handler: Handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, message: "Form submitted successfully" }),
+      body: JSON.stringify({
+        success: true,
+        message: "Form submitted successfully",
+      }),
     };
   } catch (error) {
     return {
